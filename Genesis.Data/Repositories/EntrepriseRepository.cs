@@ -20,6 +20,18 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
+        public void EditEntreprise(Entreprise entreprise)
+        {
+            _genesisContext.Entreprises.Update(entreprise);
+            _genesisContext.SaveChanges();
+        }
+
+        public Entreprise EntrepriseById(int Id)
+        {
+            var entreprise = _genesisContext.Entreprises.FirstOrDefault(e => e.Id == Id);
+            return entreprise;
+        }
+
         public void HireContact(ContactEntreprise contactEntreprise)
         {
             _genesisContext.ContactsEntreprises.Add(contactEntreprise);

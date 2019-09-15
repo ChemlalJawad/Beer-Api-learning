@@ -36,5 +36,16 @@ namespace Genesis.Service.Entreprises.Services
 
             _entrepriseRepository.HireContact(contactEntreprise);
         }
+
+        public Entreprise Update(int Id, CreateEntrepriseCommand command)
+        {
+            var entreprise = _entrepriseRepository.EntrepriseById(Id);
+            if (command.Adresses != null) entreprise.Adresses = command.Adresses;
+            if (command.SiegeSocial != null)  entreprise.SiegeSocial = command.SiegeSocial;
+            if (command.NumeroTva != null)  entreprise.NumeroTva = command.NumeroTva;
+
+            _entrepriseRepository.EditEntreprise(entreprise);
+            return entreprise;
+        }
     }
 }

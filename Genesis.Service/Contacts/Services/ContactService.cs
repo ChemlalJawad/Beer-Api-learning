@@ -21,7 +21,8 @@ namespace Genesis.Service.Contacts.Services
                  TypeContact = command.TypeContact,
                  NumeroTva = command.NumeroTva
             };
-            if(contact.TypeContact == Core.Enum.TypeContact.Employe) { contact.NumeroTva = "NoTVA"; }
+            if (contact.Adresse == null) { return null; }
+            if(contact.TypeContact == Core.Enum.TypeContact.Freelance && contact.NumeroTva == null) { return null; }
 
             _contactRepository.CreateContact(contact);
             return contact;

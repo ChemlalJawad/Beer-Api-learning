@@ -38,6 +38,14 @@ namespace Genesis.Web.Controllers
             _entrepriseService.HireContact(command);
             return Ok();
         }
+        // Edit api/<controller>
+        [HttpPut]
+        [Route("entreprise/{id}")]
+        public ActionResult<Contact> Edit([FromRoute] int Id, CreateEntrepriseCommand command)
+        {
+            _entrepriseService.Update(Id, command);
+            return Ok();
+        }
 
     }
 }
