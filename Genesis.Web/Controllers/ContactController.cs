@@ -37,6 +37,14 @@ namespace Genesis.Web.Controllers
             var contact = _contactService.Create(command);
             return Ok(contact);
         }
+        // Delete api/<controller>
+        [HttpDelete]
+        [Route("contact/{id}")]
+        public ActionResult<Contact> Delete([FromRoute] int Id)
+        {    
+             _contactService.Delete(Id);
+            return Ok();
+        }
 
      
     }

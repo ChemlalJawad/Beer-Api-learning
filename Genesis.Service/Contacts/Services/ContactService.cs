@@ -25,6 +25,12 @@ namespace Genesis.Service.Contacts.Services
             return contact;
         }
 
+        public void Delete(int Id)
+        {
+            var contact = _contactRepository.ContactById(Id);
+            _contactRepository.DeleteContact(contact);
+        }
+
         public IEnumerable<Contact> GetAll()
         {
             var contacts = _contactRepository.GetAll();

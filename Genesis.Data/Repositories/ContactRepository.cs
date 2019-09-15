@@ -13,9 +13,22 @@ namespace Genesis.Data.Repositories
         public ContactRepository(GenesisContext genesisContext) {
             _genesisContext = genesisContext;
         }
+
+        public Contact ContactById(int Id)
+        {
+            var contact = _genesisContext.Contacts.FirstOrDefault(e => e.Id == Id);
+            return contact;        }
+
         public void CreateContact(Contact contact)
         {
             _genesisContext.Contacts.Add(contact);
+            _genesisContext.SaveChanges();
+        }
+
+        public void DeleteContact(Contact contact)
+        {
+            
+            _genesisContext.Contacts.Remove(contact);
             _genesisContext.SaveChanges();
         }
 
