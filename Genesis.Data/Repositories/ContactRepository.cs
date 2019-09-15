@@ -5,10 +5,10 @@ using Genesis.Core.Domaine;
 using Genesis.Data.Repositories.Interfaces;
 namespace Genesis.Data.Repositories
 {
-    public class ContactRepo : IContactRepository
+    public class ContactRepository : IContactRepository
     {
         private readonly GenesisContext _genesisContext;
-        public ContactRepo(GenesisContext genesisContext) {
+        public ContactRepository(GenesisContext genesisContext) {
             _genesisContext = genesisContext;
         }
         public void CreateContact(Contact contact)

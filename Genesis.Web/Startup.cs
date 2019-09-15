@@ -36,6 +36,7 @@ namespace Genesis.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddJsonOptions(
@@ -44,8 +45,8 @@ namespace Genesis.Web
             var connection = @"Server=(localdb)\mssqllocaldb;Database=GenesisProject;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<GenesisContext>(options => options.UseSqlServer(connection));
 
-            services.AddScoped<IContactRepository, ContactRepo>();
-            services.AddScoped<IEntrepriseRepository, EntrepriseRepo>();
+            services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IEntrepriseRepository, EntrepriseRepository>();
 
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IEntrepriseService, EntrepriseService>();

@@ -11,7 +11,7 @@ namespace Genesis.Core.Domaine
         public Adresse Adresse { get; set; }
         public TypeContact TypeContact { get; set; }
         public string NumeroTva { get; set; }
-        public ICollection<Entreprise> Entreprises { get; set; }
+        public ICollection<ContactEntreprise> Entreprises { get; set; }
 
     }
 

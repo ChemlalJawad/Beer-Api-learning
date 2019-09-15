@@ -16,7 +16,7 @@ namespace Genesis.Service.Contacts.Services
         public Contact Create(CreateContactCommand command)
         {
             var contact = new Contact
-            {
+            {  
                  Adresse = command.Adresse,
                  TypeContact = command.TypeContact,
                  NumeroTva = command.NumeroTva
