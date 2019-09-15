@@ -16,4 +16,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Genesis.Core\Genesis.Core.csproj" />
+    <ProjectReference Include="..\Genesis.Data\Genesis.Data.csproj" />
+    <ProjectReference Include="..\Genesis.Service\Genesis.Service.csproj" />
+  </ItemGroup>
+
 </Project>
