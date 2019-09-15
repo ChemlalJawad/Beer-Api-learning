@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Genesis.Core.Domaine
 {
-    public class Conctact
+    public class Contact
     {
         public int Id { get; set; }
         public Adresse Adresse { get; set; }
