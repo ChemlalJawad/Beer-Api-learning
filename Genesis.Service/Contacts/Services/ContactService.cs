@@ -21,6 +21,7 @@ namespace Genesis.Service.Contacts.Services
                  TypeContact = command.TypeContact,
                  NumeroTva = command.NumeroTva
             };
+            _contactRepository.CreateContact(contact);
             return contact;
         }
 
