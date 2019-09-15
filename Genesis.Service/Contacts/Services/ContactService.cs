@@ -21,6 +21,8 @@ namespace Genesis.Service.Contacts.Services
                  TypeContact = command.TypeContact,
                  NumeroTva = command.NumeroTva
             };
+            if(contact.TypeContact == Core.Enum.TypeContact.Employe) { contact.NumeroTva = "NoTVA"; }
+
             _contactRepository.CreateContact(contact);
             return contact;
         }
@@ -35,6 +37,27 @@ namespace Genesis.Service.Contacts.Services
         {
             var contacts = _contactRepository.GetAll();
             return contacts;
+        }
+
+        public Contact Update(int Id, CreateContactCommand command)
+        {
+            var contact = _contactRepository.ContactById(Id);
+            if(command.Adresse!=null) contact.Adresse = command.Adresse;
+
+            if (command.TypeContact == Core.Enum.TypeContact.Freelance) {
+                contact.TypeContact = command.TypeContact;
+                contact.NumeroTva = command.NumeroTva;
+            }else
+            {
+                contact.NumeroTva = "NoTVA";
+            }
+            if (   command.TypeContact == Core.Enum.TypeContact.Freelance 
+                && contact.TypeContact == Core.Enum.TypeContact.Freelance) { 
+                contact.NumeroTva = command.NumeroTva;
+            }
+
+            _contactRepository.EditContact(contact);
+            return contact;
         }
     }
 }

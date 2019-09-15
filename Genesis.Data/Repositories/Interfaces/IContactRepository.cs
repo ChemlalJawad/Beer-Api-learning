@@ -9,6 +9,7 @@ namespace Genesis.Data.Repositories.Interfaces
         IEnumerable<Contact> GetAll();
         void CreateContact(Contact contact);
         void DeleteContact(Contact contact);
+        void EditContact(Contact contact);
 
         Contact ContactById(int Id);
 

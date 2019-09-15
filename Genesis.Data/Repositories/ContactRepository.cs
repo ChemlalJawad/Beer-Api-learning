@@ -32,6 +32,12 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
+        public void EditContact(Contact contact)
+        {
+            _genesisContext.Contacts.Update(contact);
+            _genesisContext.SaveChanges();
+        }
+
         public IEnumerable<Contact> GetAll()
         {
             var contacts = _genesisContext.Contacts

@@ -11,6 +11,7 @@ namespace Genesis.Service.Contacts.Services.Interfaces
         IEnumerable<Contact> GetAll(); //verifier si j'ai bien au moins un contact
         Contact Create(CreateContactCommand command);
         void Delete(int Id);
+        Contact Update(int Id, CreateContactCommand command);
         
     }
 }

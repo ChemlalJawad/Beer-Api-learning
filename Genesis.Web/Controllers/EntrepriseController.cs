@@ -38,5 +38,6 @@ namespace Genesis.Web.Controllers
             _entrepriseService.HireContact(command);
             return Ok();
         }
+
     }
 }
