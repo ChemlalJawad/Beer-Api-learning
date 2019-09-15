@@ -5,7 +5,7 @@ using Genesis.Core.Domaine;
 
 namespace Genesis.Service.Entreprises
 {
-    public class EntreprisesCommand
+    public class CreateEntrepriseCommand
     {
         public ICollection<Adresse> Adresses { get; set; }
 

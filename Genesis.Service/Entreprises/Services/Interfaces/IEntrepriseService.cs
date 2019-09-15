@@ -7,6 +7,7 @@ namespace Genesis.Service.Entreprises.Services.Interfaces
 {
     public interface IEntrepriseService
     {
-        Entreprise CreateEnt(EntreprisesCommand command);
+        Entreprise CreateEntreprise(CreateEntrepriseCommand command);
+        void HireContact(HireContactCommand command);
     }
 }

@@ -19,5 +19,11 @@ namespace Genesis.Data.Repositories
             _genesisContext.Entreprises.Add(entreprise);
             _genesisContext.SaveChanges();
         }
+
+        public void HireContact(ContactEntreprise contactEntreprise)
+        {
+            _genesisContext.ContactsEntreprises.Add(contactEntreprise);
+            _genesisContext.SaveChanges();
+        }
     }
 }

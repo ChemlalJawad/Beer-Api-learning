@@ -20,6 +20,7 @@ namespace Genesis.Data
                 .WithMany(t => t.Contacts)
                 .HasForeignKey(pt => pt.EntrepriseId);
         }
+        public DbSet<ContactEntreprise> ContactsEntreprises { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Entreprise> Entreprises { get; set; }
     }

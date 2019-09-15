@@ -14,7 +14,7 @@ namespace Genesis.Service.Entreprises.Services
         {
             _entrepriseRepository = entrepriseRepository;
         }
-        public Entreprise CreateEnt(EntreprisesCommand command)
+        public Entreprise CreateEntreprise(CreateEntrepriseCommand command)
         {
             
             var entreprise = new Entreprise {
@@ -26,6 +26,15 @@ namespace Genesis.Service.Entreprises.Services
 
             return entreprise;
         }
-        
+
+        public void HireContact(HireContactCommand command)
+        {
+            var contactEntreprise = new ContactEntreprise {
+               ContactId = command.ContactId,
+               EntrepriseId = command.EntrepriseId
+            };
+
+            _entrepriseRepository.HireContact(contactEntreprise);
+        }
     }
 }

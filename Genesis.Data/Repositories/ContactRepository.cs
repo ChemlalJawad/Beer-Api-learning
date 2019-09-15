@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Genesis.Core.Domaine;
 using Genesis.Data.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 namespace Genesis.Data.Repositories
 {
     public class ContactRepository : IContactRepository
@@ -19,7 +21,11 @@ namespace Genesis.Data.Repositories
 
         public IEnumerable<Contact> GetAll()
         {
-            var contacts = _genesisContext.Contacts.ToList();
+            var contacts = _genesisContext.Contacts
+                .Include(e => e.Adresse)
+                .Include(e => e.Entreprises)
+                .ThenInclude(e => e.Entreprise)
+                .ToList();
             return contacts;
         }
     }

@@ -23,11 +23,20 @@ namespace Genesis.Web.Controllers
         // POST api/<controller>
         [HttpPost]
         [Route("entreprise")]
-        public ActionResult<Contact> Create(EntreprisesCommand command)
+        public ActionResult<Contact> Create(CreateEntrepriseCommand command)
         {
-            var contact = _entrepriseService.CreateEnt(command);
+            var contact = _entrepriseService.CreateEntreprise(command);
             return Ok(contact);
         }
-       
+
+        // POST api/<controller>
+        [HttpPost]
+        [Route("entreprises/{id}/contacts/hire")]
+        public ActionResult<Contact> HireContact([FromRoute] int id, [FromBody] HireContactCommand command)
+        {
+            command.EntrepriseId = id;
+            _entrepriseService.HireContact(command);
+            return Ok();
+        }
     }
 }
