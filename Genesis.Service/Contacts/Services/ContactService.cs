@@ -19,7 +19,7 @@ namespace Genesis.Service.Contacts.Services
             {
                  Adresse = command.Adresse,
                  TypeContact = command.TypeContact,
-                 VATNumber = command.VatNumber
+                 NumeroTva = command.NumeroTva
             };
             return contact;
         }

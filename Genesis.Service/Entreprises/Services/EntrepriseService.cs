@@ -19,7 +19,7 @@ namespace Genesis.Service.Entreprises.Services
             
             var entreprise = new Entreprise {
                 Adresses = command.Adresses,
-                VatNumberEnt = command.VatNumber,
+                NumeroTva = command.NumeroTva,
                 SiegeSocial = command.SiegeSocial
             };
             _entrepriseRepository.CreateEnt(entreprise);

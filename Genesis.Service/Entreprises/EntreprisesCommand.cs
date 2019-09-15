@@ -9,8 +9,8 @@ namespace Genesis.Service.Entreprises
     {
         public ICollection<Adresse> Adresses { get; set; }
 
-        public string VatNumber { get; set; }
-        public string SiegeSocial { get; set; }
+        public string NumeroTva { get; set; }
+        public Adresse SiegeSocial { get; set; }
        
 
     }

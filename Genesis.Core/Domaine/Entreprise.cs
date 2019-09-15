@@ -8,9 +8,9 @@ namespace Genesis.Core.Domaine
    public class Entreprise
     {
         public int Id { get; set; }
-        public string SiegeSocial { get; set; }
+        public Adresse SiegeSocial { get; set; }
         
         public ICollection<Adresse> Adresses { get; set; }
-        public string VatNumberEnt { get; set; }
+        public string NumeroTva { get; set; }
     }
 }
