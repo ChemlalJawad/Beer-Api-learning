@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Genesis.Core.Domaine
-{
+{ 
    public class Adresse
     {
         public int Id { get; set; }

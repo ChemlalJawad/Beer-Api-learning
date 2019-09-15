@@ -7,7 +7,7 @@ using Genesis.Data.Repositories.Interfaces;
 
 namespace Genesis.Data.Repositories
 {
-    class EntrepriseRepo : IEntrepriseRepository
+    public class EntrepriseRepo : IEntrepriseRepository
     {
         private readonly GenesisContext _genesisContext;
         public EntrepriseRepo(GenesisContext genesisContext)

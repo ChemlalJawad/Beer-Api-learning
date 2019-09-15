@@ -14,6 +14,12 @@ using Microsoft.EntityFrameworkCore;
 using Genesis.Data;
 using Genesis.Data.Repositories;
 using Genesis.Data.Repositories.Interfaces;
+using Genesis.Service.Contacts.Services.Interfaces;
+using Genesis.Service.Contacts.Services;
+using Genesis.Service.Contacts;
+using Genesis.Service.Entreprises.Services.Interfaces;
+using Genesis.Service.Entreprises.Services;
+using Genesis.Service.Entreprises;
 
 
 namespace Genesis.Web
@@ -37,6 +43,13 @@ namespace Genesis.Web
                 );
             var connection = @"Server=(localdb)\mssqllocaldb;Database=GenesisProject;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<GenesisContext>(options => options.UseSqlServer(connection));
+
+            services.AddScoped<IContactRepository, ContactRepo>();
+            services.AddScoped<IEntrepriseRepository, EntrepriseRepo>();
+
+            services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IEntrepriseService, EntrepriseService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
