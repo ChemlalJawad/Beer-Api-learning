@@ -16,4 +16,5 @@ namespace Genesis.Core.Domaine
     public enum Type {
         Freelance,
         Employe };
+
 }
