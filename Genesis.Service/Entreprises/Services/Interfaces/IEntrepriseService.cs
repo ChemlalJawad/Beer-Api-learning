@@ -10,6 +10,8 @@ namespace Genesis.Service.Entreprises.Services.Interfaces
         Entreprise CreateEntreprise(CreateEntrepriseCommand command);
         void HireContact(HireContactCommand command);
         Entreprise Update(int Id, CreateEntrepriseCommand command);
+        Entreprise UpdateSiegeSocialAndAddAdress(int Id, CreateEntrepriseCommand command);
+
 
     }
 }

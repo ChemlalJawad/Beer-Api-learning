@@ -47,5 +47,16 @@ namespace Genesis.Service.Entreprises.Services
             _entrepriseRepository.EditEntreprise(entreprise);
             return entreprise;
         }
+
+        public Entreprise UpdateSiegeSocialAndAddAdress(int Id, CreateEntrepriseCommand command)
+        {
+            var entreprise = _entrepriseRepository.EntrepriseById(Id);
+            if (command.Adresses != null) entreprise.Adresses = command.Adresses;
+            if (command.SiegeSocial != null) entreprise.SiegeSocial = command.SiegeSocial;
+         
+
+            _entrepriseRepository.EditSiegeSocialAndAddAdresses(entreprise);
+            return entreprise;
+        }
     }
 }

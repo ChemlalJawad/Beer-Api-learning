@@ -26,6 +26,12 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
+        public void EditSiegeSocialAndAddAdresses(Entreprise entreprise)
+        {
+            _genesisContext.Entreprises.Update(entreprise);
+            _genesisContext.SaveChanges();
+        }
+
         public Entreprise EntrepriseById(int Id)
         {
             var entreprise = _genesisContext.Entreprises.FirstOrDefault(e => e.Id == Id);

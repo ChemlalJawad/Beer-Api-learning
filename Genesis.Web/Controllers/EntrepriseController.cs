@@ -46,6 +46,14 @@ namespace Genesis.Web.Controllers
             _entrepriseService.Update(Id, command);
             return Ok();
         }
+        // Edit api/<controller>
+        [HttpPut]
+        [Route("entreprises/{id}")]
+        public ActionResult<Contact> EditSiegeSocialOrAddAdresses([FromRoute] int Id, CreateEntrepriseCommand command)
+        {
+            _entrepriseService.UpdateSiegeSocialAndAddAdress(Id, command);
+            return Ok();
+        }
 
     }
 }
