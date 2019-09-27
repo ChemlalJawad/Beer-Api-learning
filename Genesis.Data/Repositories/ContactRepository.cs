@@ -10,29 +10,30 @@ namespace Genesis.Data.Repositories
     public class ContactRepository : IContactRepository
     {
         private readonly GenesisContext _genesisContext;
-        public ContactRepository(GenesisContext genesisContext) {
+        public ContactRepository(GenesisContext genesisContext)
+        {
             _genesisContext = genesisContext;
         }
 
-        public Contact ContactById(int Id)
+        public Contact FindOneById(int Id)
         {
             var contact = _genesisContext.Contacts.FirstOrDefault(e => e.Id == Id);
-            return contact;        }
+            return contact;
+        }
 
-        public void CreateContact(Contact contact)
+        public void Create(Contact contact)
         {
             _genesisContext.Contacts.Add(contact);
             _genesisContext.SaveChanges();
         }
 
-        public void DeleteContact(Contact contact)
+        public void Delete(Contact contact)
         {
-            
             _genesisContext.Contacts.Remove(contact);
             _genesisContext.SaveChanges();
         }
 
-        public void EditContact(Contact contact)
+        public void Edit(Contact contact)
         {
             _genesisContext.Contacts.Update(contact);
             _genesisContext.SaveChanges();

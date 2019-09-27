@@ -8,10 +8,8 @@ namespace Genesis.Core.Domaine
     {
         public int Id { get; set; }
         public Adresse SiegeSocial { get; set; }
-        
         public ICollection<Adresse> Adresses { get; set; }
         public string NumeroTva { get; set; }
-
         public ICollection<ContactEntreprise> Contacts { get; set; }
     }
 }

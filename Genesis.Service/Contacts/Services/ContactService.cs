@@ -24,14 +24,14 @@ namespace Genesis.Service.Contacts.Services
             if (contact.Adresse == null) { return null; }
             if(contact.TypeContact == Core.Enum.TypeContact.Freelance && contact.NumeroTva == null) { return null; }
 
-            _contactRepository.CreateContact(contact);
+            _contactRepository.Create(contact);
             return contact;
         }
 
         public void Delete(int Id)
         {
-            var contact = _contactRepository.ContactById(Id);
-            _contactRepository.DeleteContact(contact);
+            var contact = _contactRepository.FindOneById(Id);
+            _contactRepository.Delete(contact);
         }
 
         public IEnumerable<Contact> GetAll()
@@ -42,7 +42,7 @@ namespace Genesis.Service.Contacts.Services
 
         public Contact Update(int Id, CreateContactCommand command)
         {
-            var contact = _contactRepository.ContactById(Id);
+            var contact = _contactRepository.FindOneById(Id);
             if(command.Adresse!=null) contact.Adresse = command.Adresse;
 
             if (command.TypeContact == Core.Enum.TypeContact.Freelance) {
@@ -57,7 +57,7 @@ namespace Genesis.Service.Contacts.Services
                 contact.NumeroTva = command.NumeroTva;
             }
 
-            _contactRepository.EditContact(contact);
+            _contactRepository.Edit(contact);
             return contact;
         }
     }

@@ -7,11 +7,11 @@ namespace Genesis.Data.Repositories.Interfaces
     public interface IContactRepository
     {
         IEnumerable<Contact> GetAll();
-        void CreateContact(Contact contact);
-        void DeleteContact(Contact contact);
-        void EditContact(Contact contact);
+        void Create(Contact contact);
+        void Delete(Contact contact);
+        void Edit(Contact contact);
 
-        Contact ContactById(int Id);
+        Contact FindOneById(int Id);
 
     }
 }

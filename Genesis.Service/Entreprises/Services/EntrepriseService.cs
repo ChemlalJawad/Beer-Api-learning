@@ -22,7 +22,7 @@ namespace Genesis.Service.Entreprises.Services
                 NumeroTva = command.NumeroTva,
                 SiegeSocial = command.SiegeSocial
             };
-            _entrepriseRepository.CreateEnt(entreprise);
+            _entrepriseRepository.Create(entreprise);
 
             return entreprise;
         }
@@ -39,18 +39,18 @@ namespace Genesis.Service.Entreprises.Services
 
         public Entreprise Update(int Id, CreateEntrepriseCommand command)
         {
-            var entreprise = _entrepriseRepository.EntrepriseById(Id);
+            var entreprise = _entrepriseRepository.FindOneById(Id);
             if (command.Adresses != null) entreprise.Adresses = command.Adresses;
             if (command.SiegeSocial != null)  entreprise.SiegeSocial = command.SiegeSocial;
             if (command.NumeroTva != null)  entreprise.NumeroTva = command.NumeroTva;
 
-            _entrepriseRepository.EditEntreprise(entreprise);
+            _entrepriseRepository.UpdateEntreprise(entreprise);
             return entreprise;
         }
 
         public Entreprise UpdateSiegeSocialAndAddAdress(int Id, CreateEntrepriseCommand command)
         {
-            var entreprise = _entrepriseRepository.EntrepriseById(Id);
+            var entreprise = _entrepriseRepository.FindOneById(Id);
             if (command.Adresses != null) entreprise.Adresses = command.Adresses;
             if (command.SiegeSocial != null) entreprise.SiegeSocial = command.SiegeSocial;
          

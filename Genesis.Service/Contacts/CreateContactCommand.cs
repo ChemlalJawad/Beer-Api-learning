@@ -11,7 +11,5 @@ namespace Genesis.Service.Contacts
         public Adresse Adresse;
         public TypeContact TypeContact { get; set; }
         public string NumeroTva { get; set; }
-      
-        
     }
 }

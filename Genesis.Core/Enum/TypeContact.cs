@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Genesis.Core.Enum
 {
-     public enum TypeContact
+    public enum TypeContact
     {
         Freelance,
         Employe
     };
-
 }

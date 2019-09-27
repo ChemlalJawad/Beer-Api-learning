@@ -14,13 +14,13 @@ namespace Genesis.Data.Repositories
         {
             _genesisContext = genesisContext;
         }
-        public void CreateEnt(Entreprise entreprise)
+        public void Create(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Add(entreprise);
             _genesisContext.SaveChanges();
         }
 
-        public void EditEntreprise(Entreprise entreprise)
+        public void UpdateEntreprise(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Update(entreprise);
             _genesisContext.SaveChanges();
@@ -32,7 +32,7 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
-        public Entreprise EntrepriseById(int Id)
+        public Entreprise FindOneById(int Id)
         {
             var entreprise = _genesisContext.Entreprises.FirstOrDefault(e => e.Id == Id);
             return entreprise;

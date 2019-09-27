@@ -8,10 +8,10 @@ namespace Genesis.Data.Repositories.Interfaces
     public interface IEntrepriseRepository
     {
         
-        void CreateEnt(Entreprise entreprise);
+        void Create(Entreprise entreprise);
         void HireContact(ContactEntreprise contactEntreprise);
-        void EditEntreprise(Entreprise entreprise);
+        void UpdateEntreprise(Entreprise entreprise);
         void EditSiegeSocialAndAddAdresses(Entreprise entreprise);
-        Entreprise EntrepriseById(int Id);
+        Entreprise FindOneById(int Id);
     }
 }

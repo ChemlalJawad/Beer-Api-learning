@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Genesis.Core.Domaine
-{ 
-   public class Adresse
+{
+    public class Adresse
     {
         public int Id { get; set; }
         public string Rue { get; set; }
@@ -12,3 +12,6 @@ namespace Genesis.Core.Domaine
         public string Pays { get; set; }
     }
 }
+
+
+

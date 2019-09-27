@@ -8,7 +8,6 @@ namespace Genesis.Core.Domaine
     {
         public int ContactId { get; set; }
         public Contact Contact { get; set; }
-
         public int EntrepriseId { get; set; }
         public Entreprise Entreprise { get; set; }
     }
