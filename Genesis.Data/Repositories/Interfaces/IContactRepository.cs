@@ -8,7 +8,7 @@ namespace Genesis.Data.Repositories.Interfaces
     {
         IEnumerable<Contact> GetAll();
         void Create(Contact contact);
-        void Delete(Contact contact);
+        void Delete(int Id);
         void Edit(Contact contact);
 
         Contact FindOneById(int Id);

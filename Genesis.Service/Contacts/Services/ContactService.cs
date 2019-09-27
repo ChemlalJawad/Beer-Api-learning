@@ -10,19 +10,20 @@ namespace Genesis.Service.Contacts.Services
     public class ContactService : IContactService
     {
         private readonly IContactRepository _contactRepository;
-        public ContactService(IContactRepository contactRepository) {
+        public ContactService(IContactRepository contactRepository)
+        {
             _contactRepository = contactRepository;
         }
         public Contact Create(CreateContactCommand command)
         {
             var contact = new Contact
-            {  
-                 Adresse = command.Adresse,
-                 TypeContact = command.TypeContact,
-                 NumeroTva = command.NumeroTva
+            {
+                Adresse = command.Adresse,
+                TypeContact = command.TypeContact,
+                NumeroTva = command.NumeroTva
             };
             if (contact.Adresse == null) { return null; }
-            if(contact.TypeContact == Core.Enum.TypeContact.Freelance && contact.NumeroTva == null) { return null; }
+            if (contact.TypeContact == Core.Enum.TypeContact.Freelance && contact.NumeroTva == null) { return null; }
 
             _contactRepository.Create(contact);
             return contact;
@@ -30,8 +31,7 @@ namespace Genesis.Service.Contacts.Services
 
         public void Delete(int Id)
         {
-            var contact = _contactRepository.FindOneById(Id);
-            _contactRepository.Delete(contact);
+            _contactRepository.Delete(Id);
         }
 
         public IEnumerable<Contact> GetAll()
@@ -43,17 +43,20 @@ namespace Genesis.Service.Contacts.Services
         public Contact Update(int Id, CreateContactCommand command)
         {
             var contact = _contactRepository.FindOneById(Id);
-            if(command.Adresse!=null) contact.Adresse = command.Adresse;
+            if (command.Adresse != null) contact.Adresse = command.Adresse;
 
-            if (command.TypeContact == Core.Enum.TypeContact.Freelance) {
+            if (command.TypeContact == Core.Enum.TypeContact.Freelance)
+            {
                 contact.TypeContact = command.TypeContact;
                 contact.NumeroTva = command.NumeroTva;
-            }else
+            }
+            else
             {
                 contact.NumeroTva = "NoTVA";
             }
-            if (   command.TypeContact == Core.Enum.TypeContact.Freelance 
-                && contact.TypeContact == Core.Enum.TypeContact.Freelance) { 
+            if (command.TypeContact == Core.Enum.TypeContact.Freelance
+                && contact.TypeContact == Core.Enum.TypeContact.Freelance)
+            {
                 contact.NumeroTva = command.NumeroTva;
             }
 

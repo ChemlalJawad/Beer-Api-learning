@@ -8,10 +8,9 @@ namespace Genesis.Service.Entreprises
     public class CreateEntrepriseCommand
     {
         public ICollection<Adresse> Adresses { get; set; }
-
         public string NumeroTva { get; set; }
         public Adresse SiegeSocial { get; set; }
-       
+
 
     }
 }

@@ -27,9 +27,9 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
-        public void Delete(Contact contact)
+        public void Delete(int Id)
         {
-            _genesisContext.Contacts.Remove(contact);
+            _genesisContext.Contacts.Remove(new Contact() { Id = Id });
             _genesisContext.SaveChanges();
         }
 
