@@ -55,7 +55,7 @@ namespace Genesis.Service.Entreprises.Services
             if (command.SiegeSocial != null) entreprise.SiegeSocial = command.SiegeSocial;
          
 
-            _entrepriseRepository.EditSiegeSocialAndAddAdresses(entreprise);
+            _entrepriseRepository.UpdateSiegeSocialOrAdresses(entreprise);
             return entreprise;
         }
     }

@@ -26,7 +26,7 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
-        public void EditSiegeSocialAndAddAdresses(Entreprise entreprise)
+        public void UpdateSiegeSocialOrAdresses(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Update(entreprise);
             _genesisContext.SaveChanges();
