@@ -10,7 +10,7 @@ namespace Genesis.Data.Repositories.Interfaces
         
         void Create(Entreprise entreprise);
         void HireContact(ContactEntreprise contactEntreprise);
-        void UpdateEntreprise(Entreprise entreprise);
+        void Update(Entreprise entreprise);
         void EditSiegeSocialAndAddAdresses(Entreprise entreprise);
         Entreprise FindOneById(int Id);
     }

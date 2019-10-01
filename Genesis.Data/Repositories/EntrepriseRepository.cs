@@ -20,7 +20,7 @@ namespace Genesis.Data.Repositories
             _genesisContext.SaveChanges();
         }
 
-        public void UpdateEntreprise(Entreprise entreprise)
+        public void Update(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Update(entreprise);
             _genesisContext.SaveChanges();

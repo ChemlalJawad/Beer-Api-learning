@@ -44,7 +44,7 @@ namespace Genesis.Service.Entreprises.Services
             if (command.SiegeSocial != null)  entreprise.SiegeSocial = command.SiegeSocial;
             if (command.NumeroTva != null)  entreprise.NumeroTva = command.NumeroTva;
 
-            _entrepriseRepository.UpdateEntreprise(entreprise);
+            _entrepriseRepository.Update(entreprise);
             return entreprise;
         }
 
