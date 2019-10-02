@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Genesis.Data;
 using Genesis.Data.Repositories;
+using Genesis.Data.UnitOfWork;
 using Genesis.Data.Repositories.Interfaces;
 using Genesis.Service.Contacts.Services.Interfaces;
 using Genesis.Service.Contacts.Services;
@@ -47,6 +48,7 @@ namespace Genesis.Web
 
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IEntrepriseRepository, EntrepriseRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IEntrepriseService, EntrepriseService>();
