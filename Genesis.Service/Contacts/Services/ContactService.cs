@@ -4,15 +4,19 @@ using System.Text;
 using Genesis.Core.Domaine;
 using Genesis.Service.Contacts.Services.Interfaces;
 using Genesis.Data.Repositories.Interfaces;
+using Genesis.Data.UnitOfWork;
 
 namespace Genesis.Service.Contacts.Services
 {
     public class ContactService : IContactService
     {
         private readonly IContactRepository _contactRepository;
-        public ContactService(IContactRepository contactRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public ContactService(IContactRepository contactRepository, IUnitOfWork unitOfWork)
         {
             _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
         }
         public Contact Create(CreateContactCommand command)
         {
@@ -26,12 +30,15 @@ namespace Genesis.Service.Contacts.Services
             if (contact.TypeContact == Core.Enum.TypeContact.Freelance && contact.NumeroTva == null) { return null; }
 
             _contactRepository.Create(contact);
+            _unitOfWork.SaveChanges();
+
             return contact;
         }
 
         public void Delete(int Id)
         {
             _contactRepository.Delete(Id);
+            _unitOfWork.SaveChanges();
         }
 
         public IEnumerable<Contact> GetAll()
@@ -61,6 +68,8 @@ namespace Genesis.Service.Contacts.Services
             }
 
             _contactRepository.Edit(contact);
+            _unitOfWork.SaveChanges();
+
             return contact;
         }
     }

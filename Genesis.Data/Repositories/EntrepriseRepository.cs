@@ -17,19 +17,19 @@ namespace Genesis.Data.Repositories
         public void Create(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Add(entreprise);
-            _genesisContext.SaveChanges();
+          //  _genesisContext.SaveChanges();
         }
 
         public void Update(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Update(entreprise);
-            _genesisContext.SaveChanges();
+            //_genesisContext.SaveChanges();
         }
 
         public void UpdateSiegeSocialOrAdresses(Entreprise entreprise)
         {
             _genesisContext.Entreprises.Update(entreprise);
-            _genesisContext.SaveChanges();
+           // _genesisContext.SaveChanges();
         }
 
         public Entreprise FindOneById(int Id)
@@ -41,7 +41,7 @@ namespace Genesis.Data.Repositories
         public void HireContact(ContactEntreprise contactEntreprise)
         {
             _genesisContext.ContactsEntreprises.Add(contactEntreprise);
-            _genesisContext.SaveChanges();
+           // _genesisContext.SaveChanges();
         }
     }
 }

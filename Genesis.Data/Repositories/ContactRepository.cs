@@ -24,19 +24,19 @@ namespace Genesis.Data.Repositories
         public void Create(Contact contact)
         {
             _genesisContext.Contacts.Add(contact);
-            _genesisContext.SaveChanges();
+           // _genesisContext.SaveChanges();
         }
 
         public void Delete(int Id)
         {
             _genesisContext.Contacts.Remove(new Contact() { Id = Id });
-            _genesisContext.SaveChanges();
+          //  _genesisContext.SaveChanges();
         }
 
         public void Edit(Contact contact)
         {
             _genesisContext.Contacts.Update(contact);
-            _genesisContext.SaveChanges();
+            //_genesisContext.SaveChanges();
         }
 
         public IEnumerable<Contact> GetAll()
